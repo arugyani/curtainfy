@@ -29,7 +29,7 @@ const SaveWorld = ({ navigation, route }) => {
           style={styles.button}
           onPress={() => {
             if (name !== "") {
-              navigation.navigate("Welcome", { user: name, address: address });
+              navigation.navigate("CompassOne", { user: name, address: address });
             }
           }}
         >

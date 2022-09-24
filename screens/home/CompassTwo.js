@@ -1,34 +1,34 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Pressable, TextInput } from "react-native";
+import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
+
 import HideKeyboard from "../../components/HideKeyboard";
 import RadioNav from "../../components/RadioNav";
 
-const AddressScreen = ({ navigation, route }) => {
-  const [address, changeAddress] = useState("");
-  const name = route.params.user;
+const CompassTwo = ({ navigation, route }) => {
+  const [name, changeName] = useState("");
 
   return (
     <HideKeyboard>
       <View style={styles.container}>
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
-            your <Text style={styles.bold}>address</Text>?
+            How many <Text style={styles.bold}>north</Text> facing windows do you have?
           </Text>
           <TextInput
             style={styles.input}
-            onChangeText={changeAddress}
-            value={address}
+            onChangeText={changeName}
+            value={name}
           />
         </View>
         <View style={styles.navigation}>
           <View style={styles.navigation}>
-            <RadioNav items={[1, 1, 1, 0]} />
+            <RadioNav items={[1, 1, 0, 0, 0]} />
 
             <Pressable
               style={styles.button}
               onPress={() => {
-                if (address !== "") {
-                  navigation.navigate("SaveSplash", { user: name, address: address })
+                if (name !== "") {
+                  navigation.navigate("CompassThree", { user: name });
                 }
               }}
             >
@@ -56,6 +56,8 @@ const styles = StyleSheet.create({
 
   header: {
     fontSize: "36px",
+    justifyContent: "center",
+    textAlign: "center",
   },
 
   bold: {
@@ -98,4 +100,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddressScreen;
+export default CompassTwo;
