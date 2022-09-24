@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
+import RadioNav from "../components/RadioNav";
 
 const WelcomeScreen = ({ navigation }) => {
   return (
@@ -11,6 +12,8 @@ const WelcomeScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.navigation}>
+        <RadioNav items={[0, 0, 1, 0, 0]} />
+        
         <Pressable style={styles.button} onPress={() => navigation.navigate('Name')}>
           <Text style={styles.buttonText}>get started</Text>
         </Pressable>
