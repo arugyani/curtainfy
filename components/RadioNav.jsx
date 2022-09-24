@@ -7,11 +7,11 @@ import {
 const Circle = (props) => {
     if (props.indic == 1){
     return (
-        <View key={props.key} style={styles.fillCircle} />
+        <View style={styles.fillCircle} />
     );
     }
     return (
-        <View key={props.key} style={styles.circle} />
+        <View style={styles.circle} />
     );
 }
 const RadioNav = (props) => {
@@ -29,7 +29,12 @@ const RadioNav = (props) => {
 
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 20
+    },
 
     background: {
         flexDirection: "row",
