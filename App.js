@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import WelcomeScreen from './screens/WelcomeScreen';
 import NameScreen from './screens/NameScreen';
+import AddressScreen from './screens/AddressScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +23,13 @@ export default function App() {
         <Stack.Screen
           name="Name"
           component={NameScreen}
-          ßoptions={{
+          options={{
+            gestureEnabled: 'false',
+          }} />
+        <Stack.Screen
+          name="Address"
+          component={AddressScreen}
+          options={{
             gestureEnabled: 'false',
           }} />
       </Stack.Navigator>

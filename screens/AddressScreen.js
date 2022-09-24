@@ -1,22 +1,22 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
-
+import { StyleSheet, View, Text, Pressable, TextInput } from "react-native";
 import HideKeyboard from "../components/HideKeyboard";
 
-const NameScreen = ({ navigation, route }) => {
-  const [name, changeName] = useState("");
+const AddressScreen = ({ navigation, route }) => {
+  const [address, changeAddress] = useState("");
+  const name = route.params.user;
 
   return (
     <HideKeyboard>
       <View style={styles.container}>
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
-            what's your <Text style={styles.bold}>name</Text>?
+            your <Text style={styles.bold}>address</Text>?
           </Text>
           <TextInput
             style={styles.input}
-            onChangeText={changeName}
-            value={name}
+            onChangeText={changeAddress}
+            value={address}
           />
         </View>
         <View style={styles.navigation}>
@@ -24,10 +24,10 @@ const NameScreen = ({ navigation, route }) => {
             <Pressable
               style={styles.button}
               onPress={() => {
-								if (name !== "") {
-									navigation.navigate("Address", { user: name })
-								}
-							}}
+                if (address !== "") {
+                  navigation.navigate("Welcome", { user: name, address: address })
+                }
+              }}
             >
               <Text style={styles.buttonText}>continue</Text>
             </Pressable>
@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
   navigation: {
     position: "absolute",
     bottom: 50,
-		justifyContent: 'center',
-		alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   button: {
@@ -95,4 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NameScreen;
+export default AddressScreen;
