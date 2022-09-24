@@ -1,7 +1,13 @@
 import React from "react";
+<<<<<<< Updated upstream:screens/WelcomeScreen.js
 import { Text, View, Button } from "react-native";
 import { DotIndicator } from "react-native-indicators";
 import RadioNav from "../components/RadioNav";
+=======
+import { StyleSheet, Text, View, Pressable } from "react-native";
+import RadioNav from "../../components/RadioNav";
+
+>>>>>>> Stashed changes:screens/initScreens/WelcomeScreen.js
 const WelcomeScreen = ({ navigation }) => {
     return (
         <View style={{
