@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
 
-import HideKeyboard from "../components/HideKeyboard";
-import RadioNav from "../components/RadioNav";
+import HideKeyboard from "../../components/HideKeyboard";
+import RadioNav from "../../components/RadioNav";
 
-const NameScreen = ({ navigation, route }) => {
+const CompassTwo = ({ navigation, route }) => {
   const [name, changeName] = useState("");
 
   return (
@@ -12,7 +12,7 @@ const NameScreen = ({ navigation, route }) => {
       <View style={styles.container}>
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
-            what's your <Text style={styles.bold}>name</Text>?
+            Please point your phone toward the <Text style={styles.bold}>front</Text>of your home.
           </Text>
           <TextInput
             style={styles.input}
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NameScreen;
+export default CompassTwo;

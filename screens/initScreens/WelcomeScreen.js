@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
-import RadioNav from "../components/RadioNav";
+import RadioNav from "../../components/RadioNav";
 
 const WelcomeScreen = ({ navigation }) => {
   return (

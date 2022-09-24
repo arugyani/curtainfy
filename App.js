@@ -3,10 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import WelcomeScreen from "./screens/WelcomeScreen";
-import NameScreen from "./screens/NameScreen";
-import SaveWorld from "./screens/SaveWorld";
-import AddressScreen from "./screens/AddressScreen";
+import WelcomeScreen from "./screens/initScreens/WelcomeScreen";
+import NameScreen from "./screens/initScreens/NameScreen";
+import SaveWorld from "./screens/initScreens/SaveWorld";
+import AddressScreen from "./screens/initScreens/AddressScreen";
 
 const Stack = createNativeStackNavigator();
 

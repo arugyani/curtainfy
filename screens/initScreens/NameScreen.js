@@ -1,34 +1,34 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Pressable, TextInput } from "react-native";
-import HideKeyboard from "../components/HideKeyboard";
-import RadioNav from "../components/RadioNav";
+import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
 
-const AddressScreen = ({ navigation, route }) => {
-  const [address, changeAddress] = useState("");
-  const name = route.params.user;
+import HideKeyboard from "../../components/HideKeyboard";
+import RadioNav from "../../components/RadioNav";
+
+const NameScreen = ({ navigation, route }) => {
+  const [name, changeName] = useState("");
 
   return (
     <HideKeyboard>
       <View style={styles.container}>
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
-            your <Text style={styles.bold}>address</Text>?
+            what's your <Text style={styles.bold}>name</Text>?
           </Text>
           <TextInput
             style={styles.input}
-            onChangeText={changeAddress}
-            value={address}
+            onChangeText={changeName}
+            value={name}
           />
         </View>
         <View style={styles.navigation}>
           <View style={styles.navigation}>
-            <RadioNav items={[1, 1, 1, 0]} />
+            <RadioNav items={[1, 1, 0, 0]} />
 
             <Pressable
               style={styles.button}
               onPress={() => {
-                if (address !== "") {
-                  navigation.navigate("SaveSplash", { user: name, address: address })
+                if (name !== "") {
+                  navigation.navigate("Address", { user: name });
                 }
               }}
             >
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddressScreen;
+export default NameScreen;

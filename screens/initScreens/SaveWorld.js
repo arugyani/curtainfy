@@ -1,7 +1,7 @@
 import React from "react";
 
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
-import RadioNav from "../components/RadioNav";
+import RadioNav from "../../components/RadioNav";
 
 const SaveWorld = ({ navigation, route }) => {
   const name = route.params.user;
@@ -19,7 +19,7 @@ const SaveWorld = ({ navigation, route }) => {
 
         <Image
           style={styles.logo}
-          source={require("../assets/curtainfy.png")}
+          source={require("../../assets/curtainfy.png")}
         />
       </View>
       <View style={styles.navigation}>
