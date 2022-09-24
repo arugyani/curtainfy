@@ -1,5 +1,7 @@
 import React from "react";
 import { Text, View, Button } from "react-native";
+import { DotIndicator } from "react-native-indicators";
+import RadioNav from "../components/RadioNav";
 const WelcomeScreen = ({ navigation }) => {
     return (
         <View style={{
@@ -14,8 +16,11 @@ const WelcomeScreen = ({ navigation }) => {
                     navigation.navigate('Name', { name: 'Jane' })
                 }
             />
+            <RadioNav items={[0, 0, 1, 0, 0]} />
         </View>
     )
 }
+
+
 
 export default WelcomeScreen;
