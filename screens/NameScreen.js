@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
 
 import HideKeyboard from "../components/HideKeyboard";
+import RadioNav from "../components/RadioNav";
 
 const NameScreen = ({ navigation, route }) => {
   const [name, changeName] = useState("");
@@ -21,13 +22,15 @@ const NameScreen = ({ navigation, route }) => {
         </View>
         <View style={styles.navigation}>
           <View style={styles.navigation}>
+            <RadioNav items={[1, 1, 0, 0]} />
+
             <Pressable
               style={styles.button}
               onPress={() => {
-								if (name !== "") {
-									navigation.navigate("Address", { user: name })
-								}
-							}}
+                if (name !== "") {
+                  navigation.navigate("Address", { user: name });
+                }
+              }}
             >
               <Text style={styles.buttonText}>continue</Text>
             </Pressable>
@@ -75,8 +78,8 @@ const styles = StyleSheet.create({
   navigation: {
     position: "absolute",
     bottom: 50,
-		justifyContent: 'center',
-		alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   button: {

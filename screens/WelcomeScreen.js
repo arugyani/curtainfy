@@ -12,7 +12,7 @@ const WelcomeScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.navigation}>
-        <RadioNav items={[0, 0, 1, 0, 0]} />
+        <RadioNav items={[1, 0, 0, 0]} />
         
         <Pressable style={styles.button} onPress={() => navigation.navigate('Name')}>
           <Text style={styles.buttonText}>get started</Text>

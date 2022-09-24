@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, Pressable, TextInput } from "react-native";
 import HideKeyboard from "../components/HideKeyboard";
+import RadioNav from "../components/RadioNav";
 
 const AddressScreen = ({ navigation, route }) => {
   const [address, changeAddress] = useState("");
@@ -21,11 +22,13 @@ const AddressScreen = ({ navigation, route }) => {
         </View>
         <View style={styles.navigation}>
           <View style={styles.navigation}>
+            <RadioNav items={[1, 1, 1, 0]} />
+
             <Pressable
               style={styles.button}
               onPress={() => {
                 if (address !== "") {
-                  navigation.navigate("Welcome", { user: name, address: address })
+                  navigation.navigate("SaveSplash", { user: name, address: address })
                 }
               }}
             >
