@@ -5,7 +5,6 @@ import RadioNav from "../../components/RadioNav";
 
 const AddressScreen = ({ navigation, route }) => {
   const [address, changeAddress] = useState("");
-  const name = route.params.user;
 
   return (
     <HideKeyboard>
@@ -28,7 +27,7 @@ const AddressScreen = ({ navigation, route }) => {
               style={styles.button}
               onPress={() => {
                 if (address !== "") {
-                  navigation.navigate("SaveSplash", { user: name, address: address })
+                  navigation.navigate("SaveSplash", { ...route.params, address: address })
                 }
               }}
             >
