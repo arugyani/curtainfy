@@ -16,6 +16,7 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
+          gestureEnabled: false
         }}
       >
         <Stack.Screen
@@ -23,28 +24,24 @@ export default function App() {
           component={WelcomeScreen}
           options={{
             title: "Welcome",
-            // gestureEnabled: false,
           }}
         />
         <Stack.Screen
           name="Name"
           component={NameScreen}
           options={{
-            // gestureEnabled: "false",
           }}
         />
         <Stack.Screen
           name="Address"
           component={AddressScreen}
           options={{
-            // gestureEnabled: "false",
           }}
         />
         <Stack.Screen
           name="SaveSplash"
           component={SaveWorld}
           options={{
-            gestureEnabled: "false",
           }}
         />
       </Stack.Navigator>
