@@ -13,7 +13,7 @@ const SaveWorld = ({ navigation, route }) => {
   const getData = async () => {
     try {
       const response = await fetch(
-        `https://us-central1-hackdfw-363322.cloudfunctions.net/api/weather/${address}`
+        `https://api.openweathermap.org/data/2.5/weather?zip=${address}&units=imperial&appid=f96e93b96b5234bd46bdd3b3b1db119c`
       );
 
       const json = await response.json();
@@ -57,7 +57,7 @@ const SaveWorld = ({ navigation, route }) => {
           >
             <Text style={styles.buttonText}>let's go!</Text>
           </Pressable>
-      }
+        }
       </View>
     </View>
   );
