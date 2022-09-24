@@ -58,9 +58,6 @@ const SaveWorld = ({ navigation, route }) => {
             <Text style={styles.buttonText}>let's go!</Text>
           </Pressable>
         }
-        <Text>
-          {JSON.stringify(data)}
-        </Text>
       </View>
     </View>
   );
