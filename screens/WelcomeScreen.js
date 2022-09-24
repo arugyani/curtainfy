@@ -1,26 +1,66 @@
 import React from "react";
-import { Text, View, Button } from "react-native";
-import { DotIndicator } from "react-native-indicators";
+import { StyleSheet, Text, View, Pressable } from "react-native";
 import RadioNav from "../components/RadioNav";
+
 const WelcomeScreen = ({ navigation }) => {
-    return (
-        <View style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-        }}>
-            <Text>Hello, world!</Text>
-            <Button
-                title="Go to Jane's profile"
-                onPress={() =>
-                    navigation.navigate('Name', { name: 'Jane' })
-                }
-            />
-            <RadioNav items={[0, 0, 1, 0, 0]} />
-        </View>
-    )
-}
+  return (
+    <View style={styles.container}>
+      <View style={styles.headerWrapper}>
+        <Text style={styles.header}>
+          welcome to <Text style={styles.bold}>curtainfy</Text>
+        </Text>
+      </View>
 
+      <View style={styles.navigation}>
+        <RadioNav items={[0, 0, 1, 0, 0]} />
+        
+        <Pressable style={styles.button} onPress={() => navigation.navigate('Name')}>
+          <Text style={styles.buttonText}>get started</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+};
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  headerWrapper: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  header: {
+    fontSize: "36px",
+  },
+
+  bold: {
+    fontWeight: "700",
+  },
+
+  navigation: {
+    position: "absolute",
+    bottom: 100,
+  },
+
+  button: {
+    backgroundColor: "#559663",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingVertical: 16,
+    paddingHorizontal: 32,
+    borderRadius: 20,
+  },
+
+  buttonText: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "700",
+  },
+});
 
 export default WelcomeScreen;

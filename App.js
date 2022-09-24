@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import WelcomeScreen from './screens/WelcomeScreen';
 import NameScreen from './screens/NameScreen';
+import AddressScreen from './screens/AddressScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,9 +20,18 @@ export default function App() {
           component={WelcomeScreen}
           options={{ title: 'Welcome', gestureEnabled: false }}
         />
-        <Stack.Screen name="Name" component={NameScreen} options={{
-          gestureEnabled: 'false',
-        }} />
+        <Stack.Screen
+          name="Name"
+          component={NameScreen}
+          options={{
+            gestureEnabled: 'false',
+          }} />
+        <Stack.Screen
+          name="Address"
+          component={AddressScreen}
+          options={{
+            gestureEnabled: 'false',
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
