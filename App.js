@@ -19,9 +19,12 @@ export default function App() {
           component={WelcomeScreen}
           options={{ title: 'Welcome', gestureEnabled: false }}
         />
-        <Stack.Screen name="Name" component={NameScreen} options={{
-          gestureEnabled: 'false',
-        }} />
+        <Stack.Screen
+          name="Name"
+          component={NameScreen}
+          ßoptions={{
+            gestureEnabled: 'false',
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
