@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import {
     StyleSheet,
-    Text,
-    View,
-    TouchableOpacity
+    View
 } from "react-native";
 
 const Circle = (props) => {
