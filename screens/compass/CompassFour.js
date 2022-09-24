@@ -5,7 +5,7 @@ import HideKeyboard from "../../components/HideKeyboard";
 import RadioNav from "../../components/RadioNav";
 
 const CompassFour = ({ navigation, route }) => {
-  const [name, changeName] = useState("");
+  const [windows, changeWindows] = useState("");
 
   return (
     <HideKeyboard>
@@ -16,8 +16,8 @@ const CompassFour = ({ navigation, route }) => {
           </Text>
           <TextInput
             style={styles.input}
-            onChangeText={changeName}
-            value={name}
+            onChangeText={changeWindows}
+            value={windows}
           />
         </View>
         <View style={styles.navigation}>
@@ -27,8 +27,8 @@ const CompassFour = ({ navigation, route }) => {
             <Pressable
               style={styles.button}
               onPress={() => {
-                if (name !== "") {
-                  navigation.navigate("CompassFive", { user: name });
+                if (windows !== "") {
+                  navigation.navigate("CompassFive", { ...route.params, eastWindows: windows });
                 }
               }}
             >

@@ -8,12 +8,13 @@ import NameScreen from "./screens/intro/NameScreen";
 import SaveWorld from "./screens/intro/SaveWorld";
 import AddressScreen from "./screens/intro/AddressScreen";
 
-import CompassOne from "./screens/home/CompassOne";
-import CompassTwo from "./screens/home/CompassTwo";
-import CompassThree from "./screens/home/CompassThree";
-import CompassFour from "./screens/home/CompassFour";
-import CompassFive from "./screens/home/CompassFive";
+import CompassOne from "./screens/compass/CompassOne";
+import CompassTwo from "./screens/compass/CompassTwo";
+import CompassThree from "./screens/compass/CompassThree";
+import CompassFour from "./screens/compass/CompassFour";
+import CompassFive from "./screens/compass/CompassFive";
 
+import HomeScreen from "./screens/home/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +24,6 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          gestureEnabled: false
         }}
       >
         <Stack.Screen
@@ -78,6 +78,12 @@ export default function App() {
         <Stack.Screen
           name="CompassFive"
           component={CompassFive}
+          options={{
+          }}
+        /> 
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
           options={{
           }}
         />

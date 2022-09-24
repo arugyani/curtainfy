@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import RadioNav from "../../components/RadioNav";
 
-const CompassOne = ({ navigation }) => {
+const CompassOne = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerWrapper}>
@@ -14,7 +14,7 @@ const CompassOne = ({ navigation }) => {
       <View style={styles.navigation}>
         <RadioNav items={[1, 0, 0, 0, 0]} />
         
-        <Pressable style={styles.button} onPress={() => navigation.navigate('CompassTwo')}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('CompassTwo', route.params)}>
           <Text style={styles.buttonText}>continue</Text>
         </Pressable>
       </View>

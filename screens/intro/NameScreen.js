@@ -7,6 +7,10 @@ import RadioNav from "../../components/RadioNav";
 const NameScreen = ({ navigation, route }) => {
   const [name, changeName] = useState("");
 
+  const params = {
+    name: name,
+  }
+
   return (
     <HideKeyboard>
       <View style={styles.container}>
@@ -28,7 +32,7 @@ const NameScreen = ({ navigation, route }) => {
               style={styles.button}
               onPress={() => {
                 if (name !== "") {
-                  navigation.navigate("Address", { user: name });
+                  navigation.navigate("Address", params);
                 }
               }}
             >

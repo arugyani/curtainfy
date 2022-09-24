@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import RadioNav from "../../components/RadioNav";
 
 const SaveWorld = ({ navigation, route }) => {
-  const name = route.params.user;
-  const address = route.params.address;
+  const name = route.params["name"];
+  const address = route.params["address"];
+
+  const [data, setData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+
+  const getData = async () => {
+    try {
+      const response = await fetch(
+        `https://us-central1-hackdfw-363322.cloudfunctions.net/api/weather/${address}`
+      );
+
+      const json = await response.json();
+      setData(json);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -24,17 +46,18 @@ const SaveWorld = ({ navigation, route }) => {
       </View>
       <View style={styles.navigation}>
         <RadioNav items={[1, 1, 1, 1]} />
-
-        <Pressable
-          style={styles.button}
-          onPress={() => {
-            if (name !== "") {
-              navigation.navigate("CompassOne", { user: name, address: address });
-            }
-          }}
-        >
-          <Text style={styles.buttonText}>let's go!</Text>
-        </Pressable>
+        {isLoading ? <Text style={styles.bold}>Loading Data...</Text> : 
+          <Pressable
+            style={styles.button}
+            onPress={() => {
+              if (name !== "") {
+                navigation.navigate("CompassOne", { ...route.params, weatherStatus: data });
+              }
+            }}
+          >
+            <Text style={styles.buttonText}>let's go!</Text>
+          </Pressable>
+      }
       </View>
     </View>
   );
