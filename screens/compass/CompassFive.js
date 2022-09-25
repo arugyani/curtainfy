@@ -28,7 +28,7 @@ const CompassFive = ({ navigation, route }) => {
               style={styles.button}
               onPress={() => {
                 if (windows !== "") {
-                  navigation.navigate("Home", { ...route.params, westWindows: windows });
+                  navigation.navigate("Graph", { ...route.params, westWindows: windows });
                 }
               }}
             >

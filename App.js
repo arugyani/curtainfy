@@ -15,6 +15,8 @@ import CompassFour from "./screens/compass/CompassFour";
 import CompassFive from "./screens/compass/CompassFive";
 
 import HomeScreen from "./screens/home/HomeScreen";
+import SettingsScreen from "./screens/home/SettingsScreen";
+import GraphScreen from "./screens/home/GraphScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -84,6 +86,18 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
+          options={{
+          }}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={SettingsScreen}
+          options={{
+          }}
+        />
+        <Stack.Screen
+          name="Graph"
+          component={GraphScreen}
           options={{
           }}
         />
