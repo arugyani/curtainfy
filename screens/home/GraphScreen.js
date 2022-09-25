@@ -52,9 +52,6 @@ const GraphScreen = ({ navigation, route }) => {
             <View style={styles.stats}>
                 <Widget />
             </View>
-            <View style={styles.txt}>
-                <Text>Today's max temp: {maxTemp}</Text>
-            </View>
             <BarChart
                 data={data}
                 style={styles.chart}
