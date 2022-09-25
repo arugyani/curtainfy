@@ -66,14 +66,9 @@ const HomeScreen = ({ navigation, route }) => {
               <Text style={styles.notificationTextr}>Please open from <Text style={styles.bold}>8 am - 11 am</Text> and <Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
             </View>
           </HomeNotification>
-          <HomeNotification color="#fdff84">
-            <View style={{flexDirection: 'column'}}>
-              <Text style={styles.notificationText}><Text style={styles.bold}>South Curtains</Text></Text>
-              <Text style={styles.notificationTextr}>Leave closed from <Text style={styles.bold}>8 am - 1 pm</Text></Text>
-            </View>
-          </HomeNotification>
         </View>
       </View>
+      <BottomNavigation navigation={navigation} route={route}/>
 
     </ScrollView>
 
