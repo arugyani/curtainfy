@@ -15,6 +15,7 @@ import CompassFour from "./screens/compass/CompassFour";
 import CompassFive from "./screens/compass/CompassFive";
 
 import HomeScreen from "./screens/home/HomeScreen";
+import BottomNavigation from "./components/BottomNavigation";
 
 const Stack = createNativeStackNavigator();
 

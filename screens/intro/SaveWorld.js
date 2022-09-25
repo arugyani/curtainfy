@@ -10,10 +10,12 @@ const SaveWorld = ({ navigation, route }) => {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
+  const API_KEY = process.env.API_KEY;
+
   const getData = async () => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?zip=${address}&units=imperial&appid=f96e93b96b5234bd46bdd3b3b1db119c`
+        `https://api.openweathermap.org/data/2.5/weather?zip=${address}&units=imperial&appid=${API_KEY}`
       );
 
       const json = await response.json();
