@@ -8,7 +8,7 @@ const data = {
     labels: ["January", "February", "March", "April", "May", "June"],
     datasets: [
         {
-            data: [20, 45, 28, 80, 99, 43]
+            data: [10, 20, 30, 20, 10, 5]
         }
     ]
 };
@@ -23,27 +23,19 @@ const GraphScreen = ({ navigation, route }) => {
             <BarChart
                 data={data}
                 chartConfig={{
-                    backgroundColor: "#e26a00",
-                    backgroundGradientFrom: "#fb8c00",
-                    backgroundGradientTo: "#ffa726",
-                    decimalPlaces: 2, // optional, defaults to 2dp
-                    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                    labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                    style: {
-                      borderRadius: 16
-                    },
-                    propsForDots: {
-                      r: "6",
-                      strokeWidth: "2",
-                      stroke: "#ffa726"
-                    }
-                  }}
+                    backgroundGradientFrom: "#000",
+                    backgroundGradientFromOpacity: 0,
+                    backgroundGradientTo: "#0000",
+                    backgroundGradientToOpacity: 0,
+                    color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                    barPercentage: 0.5,
+                }}
                 width={Dimensions.get("window").width}
-                height={220}
+                height={300}
                 yAxisLabel="$"
                 verticalLabelRotation={30}
             />
-            <BottomNavigation navigation={navigation} route={route}/>
+            <BottomNavigation navigation={navigation} route={route} />
         </View>
     );
 };
