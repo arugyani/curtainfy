@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import RadioNav from "../../components/RadioNav";
 
+import { API_KEY } from '@env';
+
 const SaveWorld = ({ navigation, route }) => {
   const name = route.params["name"];
   const address = route.params["address"];
 
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
-
-  const API_KEY = process.env.API_KEY;
 
   const getData = async () => {
     try {
