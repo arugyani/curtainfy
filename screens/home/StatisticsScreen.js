@@ -129,22 +129,26 @@ const StatisticsScreen = ({ navigation, route }) => {
 
 const styles = StyleSheet.create({
     dataStats: {
+        width: "100%",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        paddingHorizontal: 20,
+        paddingHorizontal: 80,
     },
     container: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "start",
-        // paddingVertical: 50,
-        // paddingHorizontal: 20,
+        justifyContent: "start",
+        alignItems: "center",
+        marginTop: 50,
     },
-
+    stats: {
+        justifyContent: "start",
+        width: "95%",
+        paddingTop: 10,
+    },
     containerWrapper: {
         flex: 1,
-        justifyContent: "space-between",
+        // justifyContent: "space-between",
     },
 
     header: {
@@ -170,12 +174,13 @@ const styles = StyleSheet.create({
     },
 
     notifications: {
-        width: "100%",
-        paddingHorizontal: 20,
+        flexDirection: "column",
+        position: "center",
     },
 
     text: {
         fontSize: 18,
+        width: "100%",
         textAlign: "center",
         padding: 5,
         maxWidth: 350,
@@ -195,9 +200,8 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: 8,
         textAlign: "center",
-
+        width: "100%",
         paddingTop: 75,
-        paddingLeft: 120,
     },
 });
 

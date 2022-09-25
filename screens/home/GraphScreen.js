@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Pressable, Dimensions, StatusBar } from "react-native";
+import {
+    StyleSheet,
+    Text,
+    View,
+    Pressable,
+    Dimensions,
+    StatusBar,
+} from "react-native";
 import { BarChart } from "react-native-chart-kit";
 import BottomNavigation from "../../components/BottomNavigation";
 
@@ -12,12 +19,10 @@ const data = {
     labels: ["January", "February", "March", "April", "May", "June"],
     datasets: [
         {
-            data: [10, 20, 30, 20, 10, 5]
-        }
-    ]
+            data: [10, 20, 30, 20, 10, 5],
+        },
+    ],
 };
-
-
 
 const GraphScreen = ({ navigation, route }) => {
     const weatherDescription = route.params["weatherStatus"];
@@ -39,16 +44,21 @@ const GraphScreen = ({ navigation, route }) => {
             new Date(time * 1000).getHours() < 5 ||
             new Date(time * 1000).getHours() > 17
         )
-            return <Night temperature={temperature.toFixed(1)} location={location} />;
+            return (
+                <Night
+                    temperature={temperature.toFixed(1)}
+                    location={location}
+                />
+            );
 
-        return <Sunny temperature={temperature.toFixed(1)} location={location} />;
+        return (
+            <Sunny temperature={temperature.toFixed(1)} location={location} />
+        );
     };
 
     return (
         <View style={styles.container}>
-            <StatusBar
-        barStyle={"dark-content"}
-         />
+            <StatusBar barStyle={"dark-content"} />
             <View style={styles.stats}>
                 <Widget />
             </View>
@@ -82,11 +92,12 @@ const styles = StyleSheet.create({
     },
     stats: {
         justifyContent: "start",
-        width: "95%",
+        width: "90%",
+        paddingTop: 10,
     },
     chart: {
         marginTop: 150,
-    }
+    },
 });
 
 export default GraphScreen;
