@@ -20,6 +20,18 @@ import GraphScreen from "./screens/home/GraphScreen";
 import BottomNavigation from "./components/BottomNavigation";
 import SizeScreen from "./screens/intro/SizeScreen";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+import StatisticsScreen from "./screens/home/StatisticsScreen";
+>>>>>>> Stashed changes
+=======
+import StatisticsScreen from "./screens/home/StatisticsScreen";
+>>>>>>> Stashed changes
+=======
+import StatisticsScreen from "./screens/home/StatisticsScreen";
+>>>>>>> Stashed changes
 =======
 import StatisticsScreen from "./screens/home/StatisticsScreen";
 >>>>>>> Stashed changes
@@ -27,6 +39,9 @@ import StatisticsScreen from "./screens/home/StatisticsScreen";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   return (
     <NavigationContainer>
@@ -121,6 +136,12 @@ export default function App() {
     </NavigationContainer>
   );
 =======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     return (
         <NavigationContainer>
             <Stack.Navigator
@@ -203,6 +224,15 @@ export default function App() {
             </Stack.Navigator>
         </NavigationContainer>
     );
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
