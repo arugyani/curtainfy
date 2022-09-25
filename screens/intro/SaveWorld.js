@@ -47,7 +47,8 @@ const SaveWorld = ({ navigation, route }) => {
         />
       </View>
       <View style={styles.navigation}>
-        <RadioNav items={[1, 1, 1, 1]} />
+        <RadioNav items={[1, 1, 1, 1, 1]} />
+      
         {isLoading ? <Text style={styles.bold}>Loading Data...</Text> : 
           <Pressable
             style={styles.button}

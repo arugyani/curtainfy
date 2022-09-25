@@ -18,6 +18,7 @@ import HomeScreen from "./screens/home/HomeScreen";
 import SettingsScreen from "./screens/home/SettingsScreen";
 import GraphScreen from "./screens/home/GraphScreen";
 import BottomNavigation from "./components/BottomNavigation";
+import SizeScreen from "./screens/intro/SizeScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,12 @@ export default function App() {
         <Stack.Screen
           name="Address"
           component={AddressScreen}
+          options={{
+          }}
+        />
+        <Stack.Screen
+          name="Size"
+          component={SizeScreen}
           options={{
           }}
         />

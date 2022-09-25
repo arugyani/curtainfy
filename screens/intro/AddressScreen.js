@@ -21,13 +21,13 @@ const AddressScreen = ({ navigation, route }) => {
         </View>
         <View style={styles.navigation}>
           <View style={styles.navigation}>
-            <RadioNav items={[1, 1, 1, 0]} />
+            <RadioNav items={[1, 1, 1, 0, 0]} />
 
             <Pressable
               style={styles.button}
               onPress={() => {
                 if (address !== "") {
-                  navigation.navigate("SaveSplash", { ...route.params, address: address })
+                  navigation.navigate("Size", { ...route.params, address: address })
                 }
               }}
             >

@@ -1,38 +1,33 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
-
+import { StyleSheet, View, Text, Pressable, TextInput } from "react-native";
 import HideKeyboard from "../../components/HideKeyboard";
 import RadioNav from "../../components/RadioNav";
 
-const NameScreen = ({ navigation, route }) => {
-  const [name, changeName] = useState("");
-
-  const params = {
-    name: name,
-  }
+const SizeScreen = ({ navigation, route }) => {
+  const [size, changeSize] = useState("");
 
   return (
     <HideKeyboard>
       <View style={styles.container}>
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
-            what's your <Text style={styles.bold}>name</Text>?
+            what is the <Text style={styles.bold}>sq ft.</Text> of your house?
           </Text>
           <TextInput
             style={styles.input}
-            onChangeText={changeName}
-            value={name}
+            onChangeText={changeSize}
+            value={size}
           />
         </View>
         <View style={styles.navigation}>
           <View style={styles.navigation}>
-            <RadioNav items={[1, 1, 0, 0, 0]} />
+            <RadioNav items={[1, 1, 1, 1, 0]} />
 
             <Pressable
               style={styles.button}
               onPress={() => {
-                if (name !== "") {
-                  navigation.navigate("Address", params);
+                if (size !== "") {
+                  navigation.navigate("SaveSplash", { ...route.params, houseSize: size })
                 }
               }}
             >
@@ -60,6 +55,7 @@ const styles = StyleSheet.create({
 
   header: {
     fontSize: "36px",
+    textAlign: 'center',
   },
 
   bold: {
@@ -102,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NameScreen;
+export default SizeScreen;
