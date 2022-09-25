@@ -15,9 +15,10 @@ const HomeNotification = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: '100%',
+        width: '49%',
         paddingVertical: 20,
         paddingHorizontal: 20,
+        marginHorizontal: 1,
         marginBottom: 15,
         borderRadius: 15,
 

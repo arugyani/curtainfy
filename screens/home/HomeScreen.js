@@ -51,24 +51,32 @@ const HomeScreen = ({ navigation, route }) => {
 
         <View style={styles.notifications}>
           <Text style={styles.title}>Curtain schedule</Text>
-          <HomeNotification color="#ebb0ff">
-            <View style={{flexDirection: 'column'}}>
-              <Text style={styles.notificationText}><Text style={styles.bold}>North Curtains</Text></Text>
-              <Text style={styles.notificationTextr}>Leave closed from <Text style={styles.bold}>11:00 am - 5 pm</Text></Text>
-            </View>
-          </HomeNotification>
-          <HomeNotification color="#a0ffd2">
-            <View style={{flexDirection: 'column'}}>
-              <Text style={styles.notificationText}><Text style={styles.bold}>East Curtains</Text></Text>
-              <Text style={styles.notificationTextr}>Please open from <Text style={styles.bold}>10:15 am - 1 pm</Text> and <Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
-            </View>
-          </HomeNotification>
-          <HomeNotification color="#ff9999">
-            <View style={{flexDirection: 'column'}}>
-              <Text style={styles.notificationText}><Text style={styles.bold}>West Curtains</Text></Text>
-              <Text style={styles.notificationTextr}>Please open from <Text style={styles.bold}>8 am - 11 am</Text> and <Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
-            </View>
-          </HomeNotification>
+          <View style={styles.notificationWrapper}>
+            <HomeNotification color="#ebb0ff">
+              <View style={{flexDirection: 'column'}}>
+                <Text style={styles.notificationText}><Text style={styles.bold}>North Curtains</Text></Text>
+                <Text style={styles.notificationTextr}>Leave closed from <Text style={styles.bold}>11:00 am - 5 pm</Text></Text>
+              </View>
+            </HomeNotification>
+            <HomeNotification color="#a0ffd2">
+              <View style={{flexDirection: 'column'}}>
+                <Text style={styles.notificationText}><Text style={styles.bold}>South Curtains</Text></Text>
+                <Text style={styles.notificationTextr}>Please open from <Text style={styles.bold}>10:15 am - 1 pm</Text> and <Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
+              </View>
+            </HomeNotification>
+            <HomeNotification color="#ff9999">
+              <View style={{flexDirection: 'column'}}>
+                <Text style={styles.notificationText}><Text style={styles.bold}>East Curtains</Text></Text>
+                <Text style={styles.notificationTextr}>Please open from <Text style={styles.bold}>8 am - 11 am</Text> and <Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
+              </View>
+            </HomeNotification>
+            <HomeNotification color="#fffadc">
+              <View style={{flexDirection: 'column'}}>
+                <Text style={styles.notificationText}><Text style={styles.bold}>West Curtains</Text></Text>
+                <Text style={styles.notificationTextr}>Please open from <Text style={styles.bold}>8 am - 11 am</Text> and <Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
+              </View>
+            </HomeNotification>
+          </View>
         </View>
       </View>
       <BottomNavigation navigation={navigation} route={route}/>
@@ -112,6 +120,13 @@ const styles = StyleSheet.create({
 
   notifications: {
     width: '100%',
+  },
+
+  notificationWrapper: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
   },
 
   notificationText: {
