@@ -3,6 +3,7 @@ import { StyleSheet, Text, TextInput, View, Pressable, Switch, List, ViewPagerAn
 
 
 import HideKeyboard from "../../components/HideKeyboard";
+import BottomNavigation from "../../components/BottomNavigation";
 import RadioNav from "../../components/RadioNav";
 
 const SwitchComponent = (item => {
@@ -67,21 +68,11 @@ const SettingsScreen = ({ navigation, route }) => {
             <Text style={styles.switchTxt}>about</Text>
             <Text style={styles.actualSwitch}>{'>'}</Text>
           </View>
-
+          
         </View>
-        {/* <View style={styles.headerWrapper}>
-            <Pressable
-              style={styles.button}
-              onPress={() => {
-                if (name !== "") {
-                  navigation.navigate("CompassThree", { user: name });
-                }
-              }}
-            >
-              <Text style={styles.buttonText}>continue</Text>
-            </Pressable>
-          </View> */}
+        <BottomNavigation navigation={navigation} route={route}/>
         </View>
+        
     </HideKeyboard >
   );
 };

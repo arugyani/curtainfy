@@ -88,18 +88,21 @@ export default function App() {
           name="Home"
           component={HomeScreen}
           options={{
+            animation:'none'
           }}
         />
         <Stack.Screen
           name="Settings"
           component={SettingsScreen}
           options={{
+            animation:'none'
           }}
         />
         <Stack.Screen
           name="Graph"
           component={GraphScreen}
           options={{
+            animation:'none'
           }}
         />
       </Stack.Navigator>

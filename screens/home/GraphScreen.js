@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable, Dimensions } from "react-native";
 import { BarChart } from "react-native-chart-kit";
+import BottomNavigation from "../../components/BottomNavigation";
+
 
 const data = {
     labels: ["January", "February", "March", "April", "May", "June"],
@@ -17,6 +19,7 @@ const GraphScreen = ({ navigation, route }) => {
 
     return (
         <View style={styles.container}>
+            <Text>{route.name}</Text>
             <BarChart
                 data={data}
                 chartConfig={{
@@ -40,6 +43,7 @@ const GraphScreen = ({ navigation, route }) => {
                 yAxisLabel="$"
                 verticalLabelRotation={30}
             />
+            <BottomNavigation navigation={navigation} route={route}/>
         </View>
     );
 };

@@ -75,6 +75,10 @@ const HomeScreen = ({ navigation, route }) => {
         </View>
       </View>
     </ScrollView>
+=======
+      
+    </View>
+>>>>>>> Stashed changes
   );
 };
 
