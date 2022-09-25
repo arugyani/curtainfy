@@ -74,12 +74,9 @@ const HomeScreen = ({ navigation, route }) => {
           </HomeNotification>
         </View>
       </View>
-<<<<<<< Updated upstream
+
     </ScrollView>
-=======
-      
-    </View>
->>>>>>> Stashed changes
+
   );
 };
 
