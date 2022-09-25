@@ -67,13 +67,13 @@ const HomeScreen = ({ navigation, route }) => {
             <HomeNotification color="#ff9999">
               <View style={{flexDirection: 'column'}}>
                 <Text style={styles.notificationText}><Text style={styles.bold}>East Curtains</Text></Text>
-                <Text style={styles.notificationTextr}>Please open from <Text style={styles.bold}>8 am - 11 am</Text> and <Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
+                <Text style={styles.notificationTextr}>Please close from <Text style={styles.bold}>8 am - 11 am</Text> and open<Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
               </View>
             </HomeNotification>
             <HomeNotification color="#fffadc">
               <View style={{flexDirection: 'column'}}>
                 <Text style={styles.notificationText}><Text style={styles.bold}>West Curtains</Text></Text>
-                <Text style={styles.notificationTextr}>Please open from <Text style={styles.bold}>8 am - 11 am</Text> and <Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
+                <Text style={styles.notificationTextr}>Please open from <Text style={styles.bold}>8 am - 11 am</Text> and closed <Text style={styles.bold}>5:00 pm - 8:15 pm</Text></Text>
               </View>
             </HomeNotification>
           </View>
