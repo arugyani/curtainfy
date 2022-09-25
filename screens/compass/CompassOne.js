@@ -1,10 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, StatusBar } from "react-native";
 import RadioNav from "../../components/RadioNav";
 
 const CompassOne = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
+      <StatusBar
+        barStyle={"dark-content"}
+         />
       <View style={styles.headerWrapper}>
         <Text style={styles.header}>
           now for some questions about your <Text style={styles.bold}>windows</Text> 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View, Pressable } from "react-native";
+import { StyleSheet, Text, TextInput, View, Pressable, StatusBar } from "react-native";
 
 import HideKeyboard from "../../components/HideKeyboard";
 import RadioNav from "../../components/RadioNav";
@@ -10,6 +10,9 @@ const CompassFour = ({ navigation, route }) => {
   return (
     <HideKeyboard>
       <View style={styles.container}>
+      <StatusBar
+        barStyle={"dark-content"}
+         />
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
             How many <Text style={styles.bold}>east</Text> facing windows do you have?

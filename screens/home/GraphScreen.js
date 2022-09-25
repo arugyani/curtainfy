@@ -1,8 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Pressable, Dimensions } from "react-native";
+import { StyleSheet, Text, View, Pressable, Dimensions, StatusBar } from "react-native";
 import { BarChart } from "react-native-chart-kit";
 import BottomNavigation from "../../components/BottomNavigation";
 
+import RainyWeather from "../../components/RainyWeather";
+import Night from "../../components/Night";
+import Sunny from "../../components/Sunny";
+import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 
 const data = {
     labels: ["January", "February", "March", "April", "May", "June"],
@@ -16,12 +20,44 @@ const data = {
 
 
 const GraphScreen = ({ navigation, route }) => {
+    const weatherDescription = route.params["weatherStatus"];
+    const time = route.params["weatherStatus"]["dt"];
+    const location = route.params["weatherStatus"]["name"];
+    const temperature = route.params["weatherStatus"]["main"]["temp"];
+    const id = route.params["weatherStatus"]["weather"][0]["id"];
+    const maxTemp = route.params["weatherStatus"]["main"]["temp_max"];
+
+    const Widget = () => {
+        if (id >= 200 && id <= 622)
+            return (
+                <RainyWeather
+                    temperature={temperature.toFixed(1)}
+                    location={location}
+                />
+            );
+        if (
+            new Date(time * 1000).getHours() < 5 ||
+            new Date(time * 1000).getHours() > 17
+        )
+            return <Night temperature={temperature.toFixed(1)} location={location} />;
+
+        return <Sunny temperature={temperature.toFixed(1)} location={location} />;
+    };
 
     return (
         <View style={styles.container}>
-            <Text>{route.name}</Text>
+            <StatusBar
+        barStyle={"dark-content"}
+         />
+            <View style={styles.stats}>
+                <Widget />
+            </View>
+            <View style={styles.txt}>
+                <Text>Today's max temp: {maxTemp}</Text>
+            </View>
             <BarChart
                 data={data}
+                style={styles.chart}
                 chartConfig={{
                     backgroundGradientFrom: "#000",
                     backgroundGradientFromOpacity: 0,
@@ -43,9 +79,17 @@ const GraphScreen = ({ navigation, route }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
+        justifyContent: "start",
         alignItems: "center",
+        marginTop: 40,
     },
+    stats: {
+        justifyContent: "start",
+        width: "95%",
+    },
+    chart: {
+        marginTop: 150,
+    }
 });
 
 export default GraphScreen;

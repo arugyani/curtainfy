@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { StyleSheet, View, Text, Image, Pressable, StatusBar } from "react-native";
 import RadioNav from "../../components/RadioNav";
 
 import { API_KEY } from '@env';
@@ -33,6 +33,9 @@ const SaveWorld = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        barStyle={"dark-content"}
+         />
       <View style={styles.container}>
         <Text style={styles.header}>
           Hey, <Text style={styles.bold}>{name}</Text>!

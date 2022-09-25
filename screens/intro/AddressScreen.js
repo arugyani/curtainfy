@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Pressable, TextInput } from "react-native";
+import { StyleSheet, View, Text, Pressable, TextInput, StatusBar } from "react-native";
 import HideKeyboard from "../../components/HideKeyboard";
 import RadioNav from "../../components/RadioNav";
 
@@ -9,6 +9,9 @@ const AddressScreen = ({ navigation, route }) => {
   return (
     <HideKeyboard>
       <View style={styles.container}>
+      <StatusBar
+        barStyle={"dark-content"}
+         />
         <View style={styles.headerWrapper}>
           <Text style={styles.header}>
             your <Text style={styles.bold}>zipcode</Text>?

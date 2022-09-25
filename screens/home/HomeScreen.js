@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, StatusBar } from "react-native";
 
 import RainyWeather from "../../components/RainyWeather";
 import Night from "../../components/Night";
@@ -35,6 +35,9 @@ const HomeScreen = ({ navigation, route }) => {
 
   return (
     <ScrollView contentContainerStyle={styles.containerWrapper}>
+      <StatusBar
+        barStyle={"dark-content"}
+         />
       <View style={styles.container}>
         <Text style={styles.header}>
           Welcome, <Text style={styles.bold}>{route.params["name"]}</Text>

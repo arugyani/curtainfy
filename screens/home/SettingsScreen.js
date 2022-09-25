@@ -8,6 +8,7 @@ import {
   Switch,
   List,
   ViewPagerAndroidComponent,
+  StatusBar
 } from "react-native";
 
 import HideKeyboard from "../../components/HideKeyboard";
@@ -30,6 +31,9 @@ const SettingsScreen = ({ navigation, route }) => {
   return (
     <HideKeyboard>
       <View style={styles.container}>
+      <StatusBar
+        barStyle={"dark-content"}
+         />
         <View style={styles.listContainer}>
           <View style={styles.switchComp}>
             <Text style={styles.switchTxt}>do not disturb</Text>

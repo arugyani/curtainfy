@@ -1,5 +1,6 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+//import { StatusBar } from "expo-status-bar";
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -44,12 +45,14 @@ export default function App() {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   return (
+    
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
         }}
       >
+        
         <Stack.Screen
           name="Welcome"
           component={WelcomeScreen}
